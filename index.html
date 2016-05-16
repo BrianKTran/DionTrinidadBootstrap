@@ -28,7 +28,12 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    
+
+
+  
+
+
 </head>
 
 <body>
@@ -49,18 +54,18 @@
                 <a href="#top"  onclick = $("#menu-close").click(); ><img src="img/SMLogo2016.png" alt="" height="50%" width="50%"></a></a> 
             </li><!--/*function (event) {
 
-                  fadeIn()*/-->
+                  fadeIn()*/-id="#top"id="services"id="portfolio"id="about"id="contact" -->
             <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+                <a href="#top"  onclick = $("#menu-close").click(); >Home</a>
             </li> 
             <li>
                 <a href="#services" onclick = $("#menu-close").click(); >Overview</a>
             </li>
              <li>
-                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
+                <a href="#portfolio"  onclick = $("#menu-close").click(); >Portfolio</a>
             </li>
              <li>
-                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+                <a href="#about"  onclick = $("#menu-close").click(); >About</a>
             </li>
             <li>
                 <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
@@ -80,7 +85,7 @@
             </br>
             </br> 
 
-            <a href="#services"  style="background-color:transparent;" class="btn btn-dark btn-lg"> <img src="img/discover.jpg"  alt="" sizes="50%"> <h4>Portfolio</h4></a>
+            <a href="#portfolio"  style="background-color:transparent;" class="btn btn-dark btn-lg"> <img src="img/discover.jpg"  alt="" sizes="50%"> <h4>Portfolio</h4></a>
         </div>
 
 
@@ -88,10 +93,10 @@
 
 <!-- Overview -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="services">
+    <section id="services" class="services" style="display: inline-block;">
         <div class="container">
             <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
+                <div class="col-lg-11 col-lg-offset-2">
                     <h2>Overview</h2>
                     <hr class="small">
                     <div class="row">
@@ -198,15 +203,18 @@
         <div class="container"> 
 
             <div class="row">
- <div class="col-xs-1 text-left">
+ <div class="col-lg-3 text-left">
                 <div class="list-group">
-                    <a href="#" class="list-group-item">All</a>
-                    <a href="#" class="list-group-item">Lingerie</a>
-                    <a href="#" class="list-group-item">Men</a>
-                    <a href="#" class="list-group-item">Women</a>
+                    <a href="#" class="panel">All</a>
+                    </br>
+                    <a href="#" class="panel">Lingerie</a>
+                    </br>
+                    <a href="#" class="panel">Men</a>
+                    </br>
+                    <a href="#" class="panel">Women</a>
                 </div>
                     </div>
-                <div class="col-lg-10 col-lg-offset-1 text-center">
+                <div class="col-lg-6 col-lg-offset-1 text-center">
                     <h2>Portfolio</h2>
                     <hr class="small">
                     <div class="row">
@@ -239,8 +247,8 @@
                             </div>
                         </div>
                        
-                    <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View More Items</a>
+                    <!-- /.row (nested)      <a href="#" class="btn btn-dark">View More Items</a>-->
+               
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
@@ -354,43 +362,27 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
                     </h4>
                     <p>Philadelphia, PA</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a>
+                        <li><i class="fa fa-phone fa-fw"></i> (267) 241-4396</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:dionctrinidad@gmail.com">dionctrinidad@gmail.com</a>
                         </li>
                     </ul>
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                            <a href="https://www.facebook.com/diontrinidadphotography"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                            <a href="https://www.instagram.com/dionctrinidad/"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-                        </li>
+                      
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="text-muted">Copyright &copy; Dion Trinidad 2016</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script language="JavaScript">
-                 //When the DOM document is loaded in the browser
-
-            $(document).ready(function () {
-               //When home link is clicked show home area
-
-              $("#top").click(function (event) {
-
-                    $("#top").fadeIn();
-                  
-                  
-                  
-                 });
-                 </script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -429,6 +421,78 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
         });
     });
     </script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <script>
+                 //When the DOM document is loaded in the browser
+
+            $(document).ready(function () {
+        
+                //When the DOM document is loaded in the browser
+
+        
+
+              $("#top").click(function (event) {
+
+                    $("section").show();
+                  
+                //  $("#portfolio, #services, #about, #contact").hide();
+                  
+                 });
+
+          
+
+              $("#portfolio").click(function (event) {
+
+                    $("section").show();
+                  
+                //  $("#top, #services, #about, #contact").hide();
+                  
+                 });
+
+          
+
+              $("#services").click(function (event) {
+
+                    $("#section").show();
+                  
+                // $("#top, #portfolio, #about, #contact").hide();
+                  
+                 });
+
+       
+
+              $("#about").click(function (event) {
+
+                    $("#section").show();
+                  
+                 // $("#top, #portfolio, #services, #contact").hide();
+                  
+                 });
+
+
+              $(document).ready(function () {
+               //When home link is clicked show home area
+
+              $("#contact").click(function (event) {
+
+                    $("#section").show();
+                  
+                 // $("#top, #portfolio, #services, #about").hide();
+                  
+                
+              });
+
+               });
+
+                 </script>
+
+
+                    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
       <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
