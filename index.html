@@ -19,8 +19,11 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/fonts/plugin.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="css/swipebox.css">
+    <link rel="stylesheet" href="css/swipebox.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,11 +31,95 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    
+   
 
 
-  
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
+    <script>
+                 //When the DOM document is loaded in the browser
+
+            $(document).ready(function () {
+        
+                //When the DOM document is loaded in the browser
+
+        $("#navLogo").click(function (event) {
+
+                    $("#top").fadeIn(500);
+                  
+                 $("#portfolio, #services, #about, #contact").hide();
+                  
+                 });
+
+              $("#navHome").click(function (event) {
+
+                    $("#top").fadeIn(500);
+                  
+                $("#portfolio, #services, #about, #contact").hide();
+                  
+                 });
+
+          
+
+             $("#navOverview").click(function (event) {
+
+                    $("#services").fadeIn(500);
+                  
+                $("#top, #portfolio, #about, #contact").hide();
+                  
+                 });
+
+          
+
+            $("#navPortfolio").click(function (event) {
+
+                    $("#portfolio").fadeIn(500);
+                  
+                  $("#top, #services, #about, #contact").hide();
+                  
+                 });
+
+            $("#navPortfolio2").click(function (event) {
+
+                    $("#portfolio").fadeIn(500);
+                  
+                  $("#top, #services, #about, #contact").hide();
+                  
+                 });
+
+              $("#navAbout").click(function (event) {
+
+                    $("#about").fadeIn(500);
+                  
+                  $("#top, #portfolio, #services, #contact").hide();
+                  
+                 });
+
+
+        
+               //When home link is clicked fadeIn home area
+
+              $("#navContact").click(function (event) {
+
+                    $("#contact").fadeIn(500);
+                  
+                 $("#top, #portfolio, #services, #about").hide();
+                  
+                
+              });
+
+               });
+
+                 </script>
+<script type="text/javascript">
+$("#gallery").click( function( e ) {
+    e.preventDefault();
+    $.swipebox( [
+        { href:'img/1.jpg', title:'My Caption' }, 
+        { href:'img/2.jpg', title:'My Second Caption' }
+    ] );
+} );</script>
 
 </head>
 
@@ -44,18 +131,21 @@
      <img src="img/SMLogo2016.png" alt="" height="50%" width="50%"></a>
    
 
-    <a id="menu-toggle" href="#" style="background-color: transparent" class="btn btn-dark btn-lg toggle">
+    <a id="menu-toggle" href="#" style="background-color: transparent; opacity: 50%;" class="btn btn-dark btn-lg toggle">
     <i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
 
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); ><img src="img/SMLogo2016.png" alt="" height="50%" width="50%"></a></a> 
-            </li><!--/*function (event) {
+            <li class="sidebar-brand"><!--onclick = $("#menu-close").click();-->
+                <a href="#top" id="navLogo"  ><img src="img/SMLogo2016.png" alt="" height="50%" width="50%"></a> 
+
+            </li>
+
+            <!--/*function (event) {
 
                   fadeIn()*/-id="#top"id="services"id="portfolio"id="about"id="contact" -->
-            <li>
+            <!--li>
                 <a href="#top"  onclick = $("#menu-close").click(); >Home</a>
             </li> 
             <li>
@@ -69,11 +159,28 @@
             </li>
             <li>
                 <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+            </li-->
+   
+        <li>
+             <a href="#top"   id="navHome" >Home </a>
+        </li>
+
+        <li>
+            <a href="#services" id="navOverview" > Overview </a>
+        </li>
+        <li>
+            <a href="#portfolio"  id="navPortfolio" >Portfolio</a>
             </li>
+        <li>
+
+             <a href="#about"  id="navAbout"  >About</a>
+        </li>
+        <li>
+             <a href="#contact" id="navContact" > Contact</a>
+        </li>
         </ul>
     </nav>
   
-    
 
     <!-- Header -->
     <header id="top" class="header">
@@ -85,7 +192,7 @@
             </br>
             </br> 
 
-            <a href="#portfolio"  style="background-color:transparent;" class="btn btn-dark btn-lg"> <img src="img/discover.jpg"  alt="" sizes="50%"> <h4>Portfolio</h4></a>
+            <a href="#portfolio" id="navPortfolio2" style="background-color:transparent;" class="btn btn-dark btn-lg"> <img src="img/discover.jpg"  alt="" sizes="50%"> <h4>Portfolio</h4></a>
         </div>
 
 
@@ -93,14 +200,69 @@
 
 <!-- Overview -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="services" style="display: inline-block;">
-        <div class="container">
+  
+    <section id="services" class="services" style="display: none;" >
+        <div class="container" >
             <div class="row text-center">
-                <div class="col-lg-11 col-lg-offset-2">
+                <div class="col-lg-12 col-lg-offset-1">
                     <h2>Overview</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
+                        
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                             <img class="img-portfolio img-responsive" src="img/maddiewin.jpg"></a>
+                               
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/ChloeandOlga.jpg">
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/Geennel.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/Janina.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+
+
+                     <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/Madison.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
                             <div class="service-item">
                                 
                             
@@ -108,84 +270,154 @@
                                     <img class="img-portfolio img-responsive" src="img/AdrianneHI.jpg">
                                 </a>
                            
-                        
-                                <!--span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a-->
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
 
-                             <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/ChloeandOlga.jpg">
-                                </a>
-                                <!--span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a-->
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
+                     <div class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
                              <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/Geennel.jpg">
+                                    <img class="img-portfolio img-responsive" src="img/SailsChong.jpg">
                                 </a>
-                                <!--span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a-->
+                               
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+
+                     
+
+                     <div class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
                              <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/Janina.jpg">
+                                    <img class="img-portfolio img-responsive" src="img/Ulyana.jpg">
                                 </a>
-                                <!--span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a-->
+                               
                             </div>
                         </div>
-                        <!--div class="col-md-3 col-sm-6">
+
+                     <div class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                        </div>
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/Yana.jpg">
+                                </a>
+                               
+                            </div>
                         </div>
 
-                        <div class="col-md-3 col-sm-6">
+                     <div class="col-md-4 col-sm-6">
                             <div class="service-item">
 
-                            
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/Yellow.jpg">
+                                </a>
+                               
+                            </div>
                         </div>
-                        </div-->
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/2.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+                     <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/1.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                     
+
+                     <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/3.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                     <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/4.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                     <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/5.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+                    
+                    <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/SimpleandClean.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+                     <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/6.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+                    
+
+                     <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/7.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                     <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+
+
+                             <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/8.jpg">
+                                </a>
+                               
+                            </div>
+                        </div>
 
                     </div>
                     <!-- /.row (nested) -->
@@ -198,49 +430,54 @@
     </section>  
 
     <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio" style="display: none;">
       
-        <div class="container"> 
-
+        
             <div class="row">
- <div class="col-lg-3 text-left">
-                <div class="list-group">
-                    <a href="#" class="panel">All</a>
+ <div class="container"> 
+                 <div class="col-xs-1 text-left">
+                     <div class="list-group">
+                         <a href="#" ><strong>All</strong></a>
                     </br>
-                    <a href="#" class="panel">Lingerie</a>
+                        <a href="#" ><strong>Lingerie</strong></a>
+                    </br> 
+                         <a href="#" ><strong>Men</strong></a>
                     </br>
-                    <a href="#" class="panel">Men</a>
-                    </br>
-                    <a href="#" class="panel">Women</a>
-                </div>
-                    </div>
-                <div class="col-lg-6 col-lg-offset-1 text-center">
+                         <a href="#" ><strong>Women</strong></a>
+                  </div>
+            </div>
+                <div class="col-lg-11 col-lg-offset-2 text-center">
                     <h2>Portfolio</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/1.jpg">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+                                <a href="#gallery" class="swipebox">
+                                    <img class="img-portfolio img-responsive" src="img/1.jpg" alt="image">
                                 </a>
                             </div>
+                            <script type="text/javascript">
+                                jQuery(function($) {
+                                $("gallery").swipebox();
+                                    });
+                            </script>
                         </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
                                 <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/2.jpg">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
                                 <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/3.jpg">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
+                     <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
                                 <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/4.jpg">
                                 </a>
@@ -257,20 +494,25 @@
         <!-- /.container -->
     </section>
     <!-- About -->
-    <section id="about" class="about">
+    <section id="about" class="about" style="display: none;">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <h2>About</h2>
+                    <div class="col-lg-12 text-center">
                     <p class="lead"> Yu Tsai travels between NY and LA and is truly a bicoastal photographer going where his talent is requested.
-
+</br>
+</br>
 His inspirations are a compilation of his studies and his extensive travels to Africa, Europe, Asia and the Middle East. After changing direction from his scientific studies, Yu Tsai earned his Bachelor of Fine Arts degree from Art Center College of Design, Pasadena, CA where he discovered his passion for directing and design.
-
+</br>
+</br>
 Yu Tsai has shot for iconic international brands such as Apple, Guess, Coca-Cola, Emporio Armani, Victoria’s Secret, and continues to work with his clients such as Guess, Sports Illustrated, FreeSoul, Pantene and Hickey Freeman.
-
+</br>
+</br>
 He continues to shoot in the editorials arena; creating covers and stories with International magazines such as Harpers Bazaar Singapore, Vogue Thailand, Harpers Bazaar UK, Cosmopolitan US, Flaunt Magazine and Sports Illustrated.
-
-His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce Willis, Jon Hamm, Anne Hathaway, Forest Whitaker, James Franco, Keira Knightley, Ewan McGregror, Melissa McCarthy, Chris Pine, Juliette Lewis, Idris Elba, Chloe Moretz, Ben Foster, Joseph Gordon-Levitt, Evan Rachel Wood, Zoey Deschanel, Chris Hemsworth, Mila Kunis, Daniel Radcliffe, Olivia Wilde, James Marsden, Aaron Paul, Noomi Rapace, Kristen Stewart, Leah Michele, Aaron Eckhardt, Elle Fanning, Aaron Johnson, Maya Rudolph, Zoe Saldana, James McAvoy, Christina Applegate, Jada Pinkett Smith, Cillian Murphy, and Ryan Gosling and musicians as diverse as Ringo Starr, Janet Jackson, Alicia Keys, Adam Levine, Katy Perry, P Diddy, Ke$ha and many more..</p>
+</br>
+</br>
+His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce Willis, Jon Hamm, Anne Hathaway, Forest Whitaker, James Franco, Keira Knightley, Ewan McGregror, Melissa McCarthy, Chris Pine, Juliette Lewis, Idris Elba, Chloe Moretz, Ben Foster, Joseph Gordon-Levitt, Evan Rachel Wood, Zoey Deschanel, Chris Hemsworth, Mila Kunis, Daniel Radcliffe, Olivia Wilde, James Marsden, Aaron Paul, Noomi Rapace, Kristen Stewart, Leah Michele, Aaron Eckhardt, Elle Fanning, Aaron Johnson, Maya Rudolph, Zoe Saldana, James McAvoy, Christina Applegate, Jada Pinkett Smith, Cillian Murphy, and Ryan Gosling and musicians as diverse as Ringo Starr, Janet Jackson, Alicia Keys, Adam Levine, Katy Perry, P Diddy, Ke$ha and many more..</p></div>
                 </div>
             </div>
             <!-- /.row -->
@@ -303,7 +545,7 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
     </aside> -->
 
     <!-- Map -->
-    <section id="contact" class="map">
+    <section id="contact" class="map" style="display: none;">
     <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -358,9 +600,9 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Dion Trinidad</strong>
+                    <h4><i class="fa fa-camera-retro fa-fw"></i><strong>Dion Trinidad</strong>
                     </h4>
-                    <p>Philadelphia, PA</p>
+                    <p><i class="fa fa-home fa-fw"></i> Philadelphia, PA</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> (267) 241-4396</li>
                         <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:dionctrinidad@gmail.com">dionctrinidad@gmail.com</a>
@@ -422,72 +664,7 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
     });
     </script>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-
-    <script>
-                 //When the DOM document is loaded in the browser
-
-            $(document).ready(function () {
-        
-                //When the DOM document is loaded in the browser
-
-        
-
-              $("#top").click(function (event) {
-
-                    $("section").show();
-                  
-                //  $("#portfolio, #services, #about, #contact").hide();
-                  
-                 });
-
-          
-
-              $("#portfolio").click(function (event) {
-
-                    $("section").show();
-                  
-                //  $("#top, #services, #about, #contact").hide();
-                  
-                 });
-
-          
-
-              $("#services").click(function (event) {
-
-                    $("#section").show();
-                  
-                // $("#top, #portfolio, #about, #contact").hide();
-                  
-                 });
-
-       
-
-              $("#about").click(function (event) {
-
-                    $("#section").show();
-                  
-                 // $("#top, #portfolio, #services, #contact").hide();
-                  
-                 });
-
-
-              $(document).ready(function () {
-               //When home link is clicked show home area
-
-              $("#contact").click(function (event) {
-
-                    $("#section").show();
-                  
-                 // $("#top, #portfolio, #services, #about").hide();
-                  
-                
-              });
-
-               });
-
-                 </script>
-
+ 
 
                     <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
     <!-- Plugin JavaScript -->
@@ -510,6 +687,9 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+
+     <script src="lib/jquery-2.1.0.min.js"></script>
+    <script src="js/jquery.swipebox.js"></script>
 
 </body>
 
