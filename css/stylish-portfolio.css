@@ -49,7 +49,7 @@ body {
 .btn-dark:active {
     
     color: #fff;
-    background-color: #fff;/*rgba(0,0,0,0.7)*/
+    background-color: rgba(0,0,0,0.7);
     background-image: url(../img/home-arrow-bottom.png) no-repeat center center scroll;
 }
 
@@ -105,6 +105,7 @@ hr.small {
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
+    color: transparent;
 }
 
 .sidebar-nav li a {
@@ -115,7 +116,7 @@ hr.small {
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: transparent;
+    
 
     opacity: 50%;
     background: rgba(0,0,0,0.2);
