@@ -13,7 +13,8 @@ body {
 }
 
 body {
-    font-family: "Bebas Neue", "Montserrat";
+    font-family: "Helvetica", sans-serif; 
+   /*font-family: 'Montserrat', sans-serif;*/
 
     /*Helvetica,Arial,sans-serif"Montserrat","bebasneue""Helvetica Neue"*/
 }
@@ -39,13 +40,17 @@ body {
     border-radius: 0;
     color: #222;
     background-color:rgba(0,0,0,0.4) ;/*transparent*/
+    background-image: url(../img/discover.jpg) no-repeat center center scroll;
+
 }
 
 .btn-dark:hover,
 .btn-dark:focus,
 .btn-dark:active {
+    
     color: #fff;
-    background-color: rgba(0,0,0,0.7);
+    background-color: #fff;/*rgba(0,0,0,0.7)*/
+    background-image: url(../img/home-arrow-bottom.png) no-repeat center center scroll;
 }
 
 .btn-light {
@@ -57,8 +62,8 @@ body {
 .btn-light:hover,
 .btn-light:focus,
 .btn-light:active {
-    color: #333;
-    background-color: rgba(255,255,255,0.8);
+    color: #fff;
+    background-color: #fff ;/*rgba(255,255,255,0.8)*/
 }
 
 /* Custom Horizontal Rule */

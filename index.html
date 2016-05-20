@@ -18,12 +18,18 @@
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
+     <!--link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'-->
+     <link href="font-awesome/fonts/BebasNeue.otf" rel="stylesheet" type="text/css">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/fonts/plugin.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/fonts/bebasneue.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/swipebox.css">
-    <link rel="stylesheet" href="css/swipebox.min.css">
+
+    <link rel="stylesheet" href="swipeboxing/demo/normalize.css">
+    <link rel="stylesheet" href="swipeboxing/demo/bagpakk.min.css">
+    <link rel="stylesheet" href="swipeboxing/demo/style.css">
+    <link rel="stylesheet" href="swipeboxing/src/css/swipebox.css">
+<script type="text/javascript"  src='http://cdn.renderedfont.com/js/renderedfont-0.8.min.js#free'></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,7 +37,22 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-   
+    <title>Swipebox | A touchable jQuery lightbox</title>
+    <!-- share buttons -->
+    <script type="text/javascript">
+    (function(doc, script) {
+        var js, 
+        fjs = doc.getElementsByTagName(script)[0],
+        add = function(url, id) {
+        if (doc.getElementById(id)) {return;}
+        js = doc.createElement(script);
+        js.src = url;
+        id && (js.id = id);
+        fjs.parentNode.insertBefore(js, fjs);
+        };add("//connect.facebook.net/en_US/all.js#xfbml=1", "facebook-jssdk");
+        add("//platform.twitter.com/widgets.js", "twitter-wjs");
+        }(document, "script"));
+    </script>
 
 
    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -44,19 +65,27 @@
         
                 //When the DOM document is loaded in the browser
 
-        $("#navLogo").click(function (event) {
+            $("#brand").click(function (event) {
 
-                    $("#top").fadeIn(500);
+                    $("#top, #footer").fadeIn(500);
                   
-                 $("#portfolio, #services, #about, #contact").hide();
+                 $("#portfolio, #services, #about, #contact, #footer").fadeOut(500);
+                  
+                 });
+
+             $("#navLogo").click(function (event) {
+
+                    $("#top, #footer").fadeIn(500);
+                  
+                 $("#portfolio, #services, #about, #contact, #footer").fadeOut(500);
                   
                  });
 
               $("#navHome").click(function (event) {
 
-                    $("#top").fadeIn(500);
+                    $("#top, #footer").fadeIn(500);
                   
-                $("#portfolio, #services, #about, #contact").hide();
+                $("#portfolio, #services, #about, #contact, #footer").fadeOut(500);
                   
                  });
 
@@ -64,9 +93,9 @@
 
              $("#navOverview").click(function (event) {
 
-                    $("#services").fadeIn(500);
+                    $("#services, #footer").fadeIn(500);
                   
-                $("#top, #portfolio, #about, #contact").hide();
+                $("#top, #portfolio, #about, #contact").fadeOut(50);
                   
                  });
 
@@ -74,25 +103,25 @@
 
             $("#navPortfolio").click(function (event) {
 
-                    $("#portfolio").fadeIn(500);
+                    $("#portfolio, #footer").fadeIn(500);
                   
-                  $("#top, #services, #about, #contact").hide();
+                  $("#top, #services, #about, #contact").fadeOut(500);
                   
                  });
 
             $("#navPortfolio2").click(function (event) {
 
-                    $("#portfolio").fadeIn(500);
+                    $("#portfolio, #footer").fadeIn(500);
                   
-                  $("#top, #services, #about, #contact").hide();
+                  $("#top, #services, #about, #contact").fadeOut(500);
                   
                  });
 
               $("#navAbout").click(function (event) {
 
-                    $("#about").fadeIn(500);
+                    $("#about, #footer").fadeIn(500);
                   
-                  $("#top, #portfolio, #services, #contact").hide();
+                  $("#top, #portfolio, #services, #contact").fadeOut(500);
                   
                  });
 
@@ -102,9 +131,9 @@
 
               $("#navContact").click(function (event) {
 
-                    $("#contact").fadeIn(500);
+                    $("#contact, #footer").fadeIn(500);
                   
-                 $("#top, #portfolio, #services, #about").hide();
+                 $("#top, #portfolio, #services, #about").fadeOut(500);
                   
                 
               });
@@ -113,7 +142,7 @@
 
                  </script>
 <script type="text/javascript">
-$("#gallery").click( function( e ) {
+$(".swipebox").click( function( e ) {
     e.preventDefault();
     $.swipebox( [
         { href:'img/1.jpg', title:'My Caption' }, 
@@ -127,7 +156,7 @@ $("#gallery").click( function( e ) {
 
     <!-- Navigation -->
     <!--a class="navbar-brand page-fixed" style="fixed" href="#page-top"></a-->
-  <a id="brand" style="background-color: transparent">
+  <a href="#top" id="brand" style="background-color: transparent">
      <img src="img/SMLogo2016.png" alt="" height="50%" width="50%"></a>
    
 
@@ -162,21 +191,21 @@ $("#gallery").click( function( e ) {
             </li-->
    
         <li>
-             <a href="#top"   id="navHome" >Home </a>
+             <a href="#top"   id="navHome" ><font style="text-transform: uppercase;"face="Helvetica" >Home </font></a>
         </li>
 
         <li>
-            <a href="#services" id="navOverview" > Overview </a>
+            <a href="#services" id="navOverview" ><font style="text-transform: uppercase;"face="Helvetica" > Overview </font></a>
         </li>
         <li>
-            <a href="#portfolio"  id="navPortfolio" >Portfolio</a>
+            <a href="#portfolio"  id="navPortfolio" ><font style="text-transform: uppercase;"face="Helvetica" >Portfolio</font></a>
             </li>
         <li>
 
-             <a href="#about"  id="navAbout"  >About</a>
+             <a href="#about"  id="navAbout"  ><font style="text-transform: uppercase;"face="Helvetica" >About</font></a>
         </li>
         <li>
-             <a href="#contact" id="navContact" > Contact</a>
+             <a href="#contact" id="navContact" ><font style="text-transform: uppercase;"face="Helvetica" > Contact</font></a>
         </li>
         </ul>
     </nav>
@@ -192,7 +221,7 @@ $("#gallery").click( function( e ) {
             </br>
             </br> 
 
-            <a href="#portfolio" id="navPortfolio2" style="background-color:transparent;" class="btn btn-dark btn-lg"> <img src="img/discover.jpg"  alt="" sizes="50%"> <h4>Portfolio</h4></a>
+            <a href="#portfolio" id="navPortfolio2" class="btn btn-dark btn-lg" style="background-color: transparent;"> <img class="btn btn-dark btn-lg" src="img/discover.jpg" style="background-color: transparent ;" alt="" sizes="50%"> <h4><font style="text-transform: uppercase;"face="Helvetica" > Portfolio</h4></font></a>
         </div>
 
 
@@ -203,47 +232,47 @@ $("#gallery").click( function( e ) {
   
     <section id="services" class="services" style="display: none;" >
         <div class="container" >
-            <div class="row text-center">
+            <div class="row text-center"class="wrap small-width" >
                 <div class="col-lg-12 col-lg-offset-1">
-                    <h2>Overview</h2>
+                    <h2><font style="text-transform: uppercase;"face="Helvetica" >Overview</font></h2>
                     <hr class="small">
                     <div class="row">
-                        
-
-                        <div class="col-md-4 col-sm-6">
+                         <ul id="box-container">
+                          
+                        <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="img/maddiewin.jpg" class="swipebox">
                              <img class="img-portfolio img-responsive" src="img/maddiewin.jpg"></a>
                                
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
-                             <a href="#">
+                             <a href="img/maddiewin.jpg" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/ChloeandOlga.jpg">
                                 </a>
                                 
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-6">
+                        <div  class="box"class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/Geennel.jpg">
                                 </a>
                                
                             </div>
                         </div>
-                        <div class="col-xs-4 col-6">
+                        <div class="box" class="col-xs-4 col-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/Janina.jpg">
                                 </a>
                                
@@ -251,29 +280,29 @@ $("#gallery").click( function( e ) {
                         </div>
 
 
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/Madison.jpg">
                                 </a>
                                
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-6">
+                        <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
                                 
                             
-                                <a href="#">
+                                <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/AdrianneHI.jpg">
                                 </a>
                            
                             </div>
                         </div>
 
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
@@ -286,54 +315,54 @@ $("#gallery").click( function( e ) {
 
                      
 
-                     <div class="col-md-4 col-sm-6">
+                     <div  class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/Ulyana.jpg">
                                 </a>
                                
                             </div>
                         </div>
 
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/Yana.jpg">
                                 </a>
                                
                             </div>
                         </div>
 
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/Yellow.jpg">
                                 </a>
                                
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-6">
+                        <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/2.jpg">
                                 </a>
                                
                             </div>
                         </div>
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/1.jpg">
                                 </a>
                                
@@ -342,54 +371,54 @@ $("#gallery").click( function( e ) {
 
                      
 
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/3.jpg">
                                 </a>
                                
                             </div>
                         </div>
 
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/4.jpg">
                                 </a>
                                
                             </div>
                         </div>
 
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/5.jpg">
                                 </a>
                                
                             </div>
                         </div>
                     
-                    <div class="col-md-4 col-sm-6">
+                    <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/SimpleandClean.jpg">
                                 </a>
                                
                             </div>
                         </div>
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/6.jpg">
                                 </a>
                                
@@ -397,28 +426,28 @@ $("#gallery").click( function( e ) {
                         </div>
                     
 
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/7.jpg">
                                 </a>
                                
                             </div>
                         </div>
 
-                     <div class="col-md-4 col-sm-6">
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
 
 
-                             <a href="#">
+                             <a href="#" class="swipebox" ->
                                     <img class="img-portfolio img-responsive" src="img/8.jpg">
                                 </a>
                                
                             </div>
                         </div>
-
+                        </ul>
                     </div>
                     <!-- /.row (nested) -->
                 </div>
@@ -434,51 +463,51 @@ $("#gallery").click( function( e ) {
       
         
             <div class="row">
- <div class="container"> 
-                 <div class="col-xs-1 text-left">
-                     <div class="list-group">
-                         <a href="#" ><strong>All</strong></a>
+ <div class="container">
+   <ul id="box-container">
+                          
+                 <div class="col-xs-3 text-left">
+                     <div class="btn-light btn-lg">
+                         <a href="#" ><font style="text-transform: uppercase;"face="Helvetica" >All</font></a>
                     </br>
-                        <a href="#" ><strong>Lingerie</strong></a>
+                        <a href="#" ><font style="text-transform: uppercase;"face="Helvetica" >Lingerie</font></a>
                     </br> 
-                         <a href="#" ><strong>Men</strong></a>
+                         <a href="#" ><font style="text-transform: uppercase;"face="Helvetica" >Men</font></a>
                     </br>
-                         <a href="#" ><strong>Women</strong></a>
+                         <a href="#" ><font style="text-transform: uppercase;"face="Helvetica" >Women</font></a>
                   </div>
             </div>
                 <div class="col-lg-11 col-lg-offset-2 text-center">
-                    <h2>Portfolio</h2>
+                    <h2><font style="text-transform: uppercase;"face="Helvetica" >Portfolio</font></h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-4 col-sm-6">
+                    <ul id="box-container">
+                        <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
-                                <a href="#gallery" class="swipebox">
+                                <a href="img/1.jpg" class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/1.jpg" alt="image">
                                 </a>
                             </div>
-                            <script type="text/javascript">
-                                jQuery(function($) {
-                                $("gallery").swipebox();
-                                    });
-                            </script>
+                            
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
-                                <a href="#">
+                                <a href="img/2.jpg " class="swipebox">
                                     <img class="img-portfolio img-responsive" src="img/2.jpg">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
-                                <a href="#">
+                                <a href="img/3.jpg">
                                     <img class="img-portfolio img-responsive" src="img/3.jpg">
                                 </a>
                             </div>
                         </div>
-                     <div class="col-md-4 col-sm-6">
+
+                     <div class="box" class="col-md-4 col-sm-6">
                             <div class="service-item">
-                                <a href="#">
+                                <a href="img/4.jpg">
                                     <img class="img-portfolio img-responsive" src="img/4.jpg">
                                 </a>
                             </div>
@@ -489,7 +518,7 @@ $("#gallery").click( function( e ) {
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
-            <!-- /.row -->
+            <!-- /.row --></ul> 
         </div>
         <!-- /.container -->
     </section>
@@ -498,7 +527,7 @@ $("#gallery").click( function( e ) {
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <h2>About</h2>
+                    <h2><font style="text-transform: uppercase;"face="Helvetica" >About</font></h2>
                     <div class="col-lg-12 text-center">
                     <p class="lead"> Yu Tsai travels between NY and LA and is truly a bicoastal photographer going where his talent is requested.
 </br>
@@ -548,8 +577,8 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
     <section id="contact" class="map" style="display: none;">
     <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Get In Touch</h2>
+                <div class="col-sm-4 col-lg-12 text-center">
+                    <h2 class="section-heading"><font style="text-transform: uppercase;"face="Helvetica" >Get In Touch</font></h2>
                    
                 </div>
             </div>
@@ -580,7 +609,7 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <button type="submit" class="btn btn-light-lg">Send Message</button>
                             </div>
                         </div>
                     </form>
@@ -597,16 +626,16 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container" id="footer" style="display: none;">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h4><i class="fa fa-camera-retro fa-fw"></i><strong>Dion Trinidad</strong>
                     </h4>
                     <p><i class="fa fa-home fa-fw"></i> Philadelphia, PA</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (267) 241-4396</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:dionctrinidad@gmail.com">dionctrinidad@gmail.com</a>
-                        </li>
+                        <p><i class="fa fa-phone fa-fw"></i> (267) 241-4396</p>
+                        <p><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:dionctrinidad@gmail.com">dionctrinidad@gmail.com</a>
+                        </p>
                     </ul>
                     <br>
                     <ul class="list-inline">
