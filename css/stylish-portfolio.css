@@ -141,6 +141,86 @@ hr.small {
     color: #fff;
     background: none;
 }
+/*2*/
+
+
+#sidebar-wrapper2 {
+    z-index: 1000;
+    opacity: 50%;
+    position: fixed;
+   left: 0;
+    width: 250px;
+    height: 100%;
+    margin-right: -250px;
+    overflow-y: auto;
+    background: #fff;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.sidebar-nav2 {
+    opacity: 50%;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav2 li {
+    text-indent: 20px;
+    line-height: 40px;
+    color: transparent;
+}
+
+.sidebar-nav2 li a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+}
+
+.sidebar-nav2 li a:hover {
+    text-decoration: none;
+    
+
+    opacity: 50%;
+    background: rgba(0,0,0,0.2);
+}
+
+.sidebar-nav2 li a:active,
+.sidebar-nav2 li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav2 > .sidebar-brand {
+    height: 100px;
+    font-size: 36px;
+    line-height: 100px;
+}
+
+.sidebar-nav2 > .sidebar-brand a {
+    color: transparent;
+}
+
+.sidebar-nav2 > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+#sidebar-wrapper2.active {
+    left: 250px;
+    width: 250px;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}/*2*/
 
 #brand {
     z-index: 1;
@@ -156,6 +236,22 @@ hr.small {
     right: 0;
 }
 
+#menu-toggle2 {
+    z-index: 1;
+    position: fixed;
+    top: 100px;
+    left: 30px;
+
+}
+
+
+#menu-close2 {
+    z-index: 1;
+    position: fixed;
+    top: 100px;
+    left: 30px;
+
+}
 #sidebar-wrapper.active {
     right: 250px;
     width: 250px;
@@ -169,7 +265,9 @@ hr.small {
 .toggle {
     margin: 5px 5px 0 0;
 }
-
+.toggle2{
+    margin:  0 0 5px 5px;
+}
 /* Header */
 
 .header {
