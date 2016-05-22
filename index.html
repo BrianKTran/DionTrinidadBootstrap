@@ -15,7 +15,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="swipeboxing/demo/normalize.css">
+    <link rel="stylesheet" href="swipeboxing/demo/bagpakk.min.css">
+    <link rel="stylesheet" href="swipeboxing/demo/style.css">
+    <link rel="stylesheet" href="swipeboxing/src/css/swipebox.css">
     <link href="css/stylish-portfolio.css" rel="stylesheet">
+
 
     <!-- Custom Fonts -->
      <!--link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'-->
@@ -34,6 +39,13 @@
 <script src="swipebox/js/jquery.swipebox.js"></script>
 <script type="text/javascript" src="swipebox/js/jquery.swipebox.js"></script>
 <script type="text/javascript" src="swipebox/js/jquery.swipebox.min.js"></script>
+
+
+<script src="swipeboxing/lib/ios-orientationchange-fix.js"></script>
+    <script src="swipeboxing/lib/jquery-2.1.0.min.js"></script>
+    <script src="swipeboxing/src/js/jquery.swipebox.js"></script>
+
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -295,7 +307,45 @@ $("#gallery-1").click( function( e ) {
 
 <!-- Overview -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-  
+  <section id="exemple" class="container">
+        <div class="wrap small-width">
+            <div id="try"></div>
+            <ul id="box-container">
+                <li class="box">
+                    <a href="http://swipebox.csag.co/images/image-1.jpg" class="swipebox" title="Fog">
+                        <img src="http://swipebox.csag.co/images/image-1.jpg" alt="image">
+                    </a>
+                </li>
+                <li class="box">
+                    <a href="http://swipebox.csag.co/images/image-2.jpg" class="swipebox" title="City">
+                        <img src="http://swipebox.csag.co/images/image-2.jpg" alt="image">
+                    </a>
+                </li>
+                <li class="box">
+                    <a href="http://swipebox.csag.co/images/image-3.jpg" class="swipebox" title="Street">
+                        <img src="http://swipebox.csag.co/images/image-3.jpg" alt="image">
+                    </a>
+                </li>
+                <li class="box">
+                    <a href="http://swipebox.csag.co/images/image-4.jpg" class="swipebox" title="Mustache Guy">
+                        <img src="http://swipebox.csag.co/images/image-4.jpg" alt="image">
+                    </a>
+                </li>
+
+                <li class="box">
+                    <a href="http://swipebox.csag.co/images/image-4.jpg" class="swipebox" title="Mustache Guy">
+                        <img src="http://swipebox.csag.co/images/image-4.jpg" alt="image">
+                    </a>
+                </li>
+
+                <li class="box">
+                    <a href="http://swipebox.csag.co/images/image-4.jpg" class="swipebox" title="Mustache Guy">
+                        <img src="http://swipebox.csag.co/images/image-4.jpg" alt="image">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
     <section id="services" class="services" style="display: none;" >
         <div class="container" >
             <div class="row text-center"class="wrap" >
@@ -960,7 +1010,7 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
             $( '.swipebox-video' ).swipebox();
 
             /* Dynamic Gallery */
-            $( '#swipebox' ).click( function( e ) {
+            $( '#gallery' ).click( function( e ) {
                 e.preventDefault();
                 $.swipebox( [
                     { href : 'img/1.jpg', title : 'My Caption' },
@@ -1021,7 +1071,26 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
 
      <script src="swipebox/lib/jquery-2.1.0.min.js"></script>
     <script src="swipebox/js/jquery.swipebox.js"></script>
+<script type="text/javascript">
+    $( document ).ready(function() {
 
+            /* Basic Gallery */
+            $( '.swipebox' ).swipebox();
+            
+            /* Video */
+            $( '.swipebox-video' ).swipebox();
+
+            /* Dynamic Gallery */
+            $( '#gallery' ).click( function( e ) {
+                e.preventDefault();
+                $.swipebox( [
+                    { href : 'http://swipebox.csag.co/mages/image-1.jpg', title : 'My Caption' },
+                    { href : 'http://swipebox.csag.co/images/image-2.jpg', title : 'My Second Caption' }
+                ] );
+            } );
+
+      });
+    </script>
 
 </body>
 
