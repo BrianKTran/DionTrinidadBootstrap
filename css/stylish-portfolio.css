@@ -57,7 +57,7 @@ body {
 .btn-light {
     border-radius: 0;
     color: #333;
-    background-color: rgb(255,255,255, 1);
+    background-color: rgb(255,255,255, 0.7);
 }
 
 .btn-light:hover,
@@ -241,6 +241,7 @@ hr.small {
     position: fixed;
     top: 0;
     right: 0;
+    background-color: transparent;
 
 }
 
