@@ -13,7 +13,7 @@ body {
 }
 
 body {
-    font-family: "Helvetica", sans-serif; 
+    font-family: "Bebas Neue", normal; 
    /*font-family: 'Montserrat', sans-serif;*/
 
     /*Helvetica,Arial,sans-serif"Montserrat","bebasneue""Helvetica Neue"*/
@@ -49,21 +49,23 @@ body {
 .btn-dark:active {
     
     color: #fff;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(255,255,255,0.7);
     background-image: url(../img/home-arrow-bottom.png) no-repeat center center scroll;
 }
 
 .btn-light {
     border-radius: 0;
     color: #333;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255,255,255, 0.7);
 }
 
 .btn-light:hover,
 .btn-light:focus,
 .btn-light:active {
     color: #fff;
-    background-color: #fff ;/*rgba(255,255,255,0.8)*/
+    background-color: *rgba(255,255,255,0.7);
+
+
 }
 
 /* Custom Horizontal Rule */
@@ -83,7 +85,7 @@ hr.small {
     height: 100%;
     margin-right: -250px;
     overflow-y: auto;
-    background: #fff;
+    background: rgba(255,255,255,0.7);
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
     -ms-transition: all 0.4s ease 0s;
@@ -145,15 +147,15 @@ hr.small {
 
 
 #sidebar-wrapper2 {
-    z-index: 1000;
+   z-index: 1000;
     opacity: 50%;
     position: fixed;
-   left: 0;
-    width: 250px;
-    height: 100%;
-    margin-right: -250px;
+    left: 0;
+    width: 200px;
+    top: -10px;
+    margin-left: -250px;
     overflow-y: auto;
-    background: #fff;
+    background: rgba(255,255,255,0.7);
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
     -ms-transition: all 0.4s ease 0s;
@@ -164,7 +166,7 @@ hr.small {
 .sidebar-nav2 {
     opacity: 50%;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 250px;
     margin: 0;
@@ -204,7 +206,7 @@ hr.small {
 }
 
 .sidebar-nav2 > .sidebar-brand a {
-    color: transparent;
+    color: #999;
 }
 
 .sidebar-nav2 > .sidebar-brand a:hover {
@@ -213,13 +215,17 @@ hr.small {
 }
 
 #sidebar-wrapper2.active {
-    left: 250px;
+    left: 260px;
     width: 250px;
+    height: 750px;
+    position: fixed;
+      background-color: rgba(255,255,255,0.7);
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
     -ms-transition: all 0.4s ease 0s;
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
+    z-index: 1;
 }/*2*/
 
 #brand {
@@ -229,11 +235,27 @@ hr.small {
     left: 30px;
 }
 
-#menu-toggle {
+#menu-close {
     z-index: 1;
     position: fixed;
     top: 0;
     right: 0;
+
+}
+
+#menu-toggle {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: -1.4px;
+}
+
+#menu-close2 {
+    z-index: 1;
+    position: fixed;
+    top: 94.5px;
+    left: 35.5px;
+
 }
 
 #menu-toggle2 {
@@ -245,14 +267,8 @@ hr.small {
 }
 
 
-#menu-close2 {
-    z-index: 1;
-    position: fixed;
-    top: 100px;
-    left: 30px;
-
-}
 #sidebar-wrapper.active {
+     z-index: 1;
     right: 250px;
     width: 250px;
     -webkit-transition: all 0.4s ease 0s;
@@ -272,14 +288,15 @@ hr.small {
 
 .header {
     display: table;
-    position: relative;
+    position: fixed;
     width: 100%;
     height: 100%;
-    background: url(../img/Madison.jpg) no-repeat center center scroll;
+    background: url(../img/Madison.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+   
 }
 
 /* About */
