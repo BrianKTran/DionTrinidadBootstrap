@@ -102,6 +102,7 @@ function main() {
                 queue: false
             }
         });
+        
         $('.cat a').click(function() {
             $('.cat .active').removeClass('active');
             $(this).addClass('active');
