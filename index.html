@@ -25,7 +25,7 @@
 
     <link rel="stylesheet" href="demo/normalize.css">
     <link rel="stylesheet" href="demo/bagpakk.min.css">
-    <link rel="stylesheet" href="demo/style.css">
+<!--     <link rel="stylesheet" href="demo/style.css"> -->
     <link rel="stylesheet" href="src/css/swipebox.css">
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 
@@ -39,25 +39,26 @@
     <link href="css/plugin.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <script type="text/javascript"  src="http://cdn.renderedfont.com/js/renderedfont-0.8.min.js#free"></script>
+
+    <link rel="stylesheet" href="swipebox/src/css/swipebox.css">
+    <link rel="stylesheet" href="swipebox/src/css/swipebox.min.css">
     <link rel="stylesheet" href="swipebox/demo/normalize.css">
     <link rel="stylesheet" href="swipebox/demo/bagpakk.min.css">
     <link rel="stylesheet" href="swipebox/demo/style.css">
-    <link rel="stylesheet" href="swipebox/src/css/swipebox.css">
-    <link rel="stylesheet" href="swipebox/src/css/swipebox.min.css">
-
     <link rel="stylesheet" type="text/css"  href="css/style.css">
 
    <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
     <link href="css/owl.theme.css" rel="stylesheet" media="screen">
+	
 <script src="swipebox/lib/jquery-1.9.0.js"></script>
-<script src="swipebox/js/jquery.swipebox.js"></script>
-<script type="text/javascript" src="swipebox/js/jquery.swipebox.js"></script>
-<script type="text/javascript" src="swipebox/js/jquery.swipebox.min.js"></script>
+<script src="swipebox/src/js/jquery.swipebox.js"></script>
+<script type="text/javascript" src="swipebox/src/js/jquery.swipebox.js"></script>
+<script type="text/javascript" src="swipebox/src/js/jquery.swipebox.min.js"></script>
 
   <script type="text/javascript" src="js/modernizr.custom.js"></script>
-<script src="swipeboxing/lib/ios-orientationchange-fix.js"></script>
-    <script src="swipeboxing/lib/jquery-2.1.0.min.js"></script>
-    <script src="swipeboxing/src/js/jquery.swipebox.js"></script>
+<script src="swipebox/lib/ios-orientationchange-fix.js"></script>
+    <script src="swipebox/lib/jquery-2.1.0.min.js"></script>
+    <script src="swipebox/src/js/jquery.swipebox.js"></script>
 
 
 
@@ -69,7 +70,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <title>Swipebox | A touchable jQuery lightbox</title>
+    
     <!-- share buttons -->
     <script type="text/javascript">
     (function(doc, script) {
@@ -132,6 +133,9 @@
                   
                  $("#portfolio, #services, #about, #contact, #footer").hide();
                  $("#sidebar-wrapper").toggleClass("active"); 
+				 $("#menu-toggle").show("active");      
+				 $("#menu-close").hide("active"); 
+				 
                  });
 
               $("#navHome").click(function (event) {
@@ -140,6 +144,8 @@
                   
                 $("#portfolio, #services, #about, #contact, #footer").hide();
                 $("#sidebar-wrapper").toggleClass("active");  
+				$("#menu-toggle").show("active");      
+				$("#menu-close").hide("active"); 
                  });
 
           
@@ -160,6 +166,8 @@
                   
                   $("#top,#text-vertical-center, #services, #about, #contact").fadeOut(15);
                   $("#sidebar-wrapper").toggleClass("active");
+				  $("#menu-toggle").show("active");      
+				  $("#menu-close").hide("active"); 
                  });
 
             // $("#navPortfolio2").click(function (event) {
@@ -176,6 +184,8 @@
                   
                   $("#top,#text-vertical-center, #portfolio, #services, #contact").fadeOut(500);
                   $("#sidebar-wrapper").toggleClass("active");
+				  $("#menu-toggle").show("active");      
+				  $("#menu-close").hide("active"); 
                  });
 
 
@@ -188,6 +198,8 @@
                   
                  $("#top,#text-vertical-center, #portfolio, #services, #about").fadeOut(500);
                  $("#sidebar-wrapper").toggleClass("active");  
+				 $("#menu-toggle").show("active");      
+				 $("#menu-close").hide("active"); 
                 
               });
 
@@ -239,7 +251,9 @@
                      $("#contact, #footer").fadeIn(500);
                   
                  $("#top,#text-vertical-center, #portfolio, #services, #about").fadeOut(500);
-                 $("#sidebar-wrapper").toggleClass("active");  
+                 $("#sidebar-wrapper").toggleClass("active"); 
+				 $("#menu-toggle").show("active");      
+				 $("#menu-close").hide("active"); 				 
                });
          });
 
@@ -294,14 +308,14 @@ $("#gallery-1").click( function( e ) {
      <img src="img/SMLogo2016.png" alt="" height="50%" width="50%"></a>
    
 
-    <a id="menu-toggle" href="#" style="background-color: transparent; opacity: 50%;" class="btn btn-dark btn-lg toggle">
+    <a id="menu-toggle" href="#" style="background-color: transparent; opacity: 50%;" class="btn btn-dark btn-lg toggle" style="display: none;">
     <i class="fa fa-bars"></i></a>
 
 
     <nav id="sidebar-wrapper">
-
+<!-- style="display: none; -->
         <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle" style="display: none;" ><i class="fa fa-times"></i></a>
             <li class="sidebar-brand"><!--onclick = $("#menu-close").click();-->
                 <a href="#top" id="navLogo"  ><img src="img/SMLogo2016.png" alt="" height="65%" width="65%"></a> 
 
@@ -365,92 +379,186 @@ $("#gallery-1").click( function( e ) {
 </header>
 
 <!-- Overview -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-  <!--section id="exemple" class="container">
-        <div class="wrap small-width">
-            <div id="try"></div>
-            <ul id="box-container">
-                <li class="box">
-                    <a href="http://swipebox.csag.co/images/image-1.jpg" class="swipebox" title="Fog">
-                        <img src="http://swipebox.csag.co/images/image-1.jpg" alt="image">
-                    </a>
-                </li>
-                <li class="box">
-                    <a href="http://swipebox.csag.co/images/image-2.jpg" class="swipebox" title="City">
-                        <img src="http://swipebox.csag.co/images/image-2.jpg" alt="image">
-                    </a>
-                </li>
-                <li class="box">
-                    <a href="http://swipebox.csag.co/images/image-3.jpg" class="swipebox" title="Street">
-                        <img src="http://swipebox.csag.co/images/image-3.jpg" alt="image">
-                    </a>
-                </li>
-                <li class="box">
-                    <a href="http://swipebox.csag.co/images/image-4.jpg" class="swipebox" title="Mustache Guy">
-                        <img src="http://swipebox.csag.co/images/image-4.jpg" alt="image">
-                    </a>
-                </li>
 
-                <li class="box">
-                    <a href="http://swipebox.csag.co/images/image-4.jpg" class="swipebox" title="Mustache Guy">
-                        <img src="http://swipebox.csag.co/images/image-4.jpg" alt="image">
-                    </a>
-                </li>
-
-                <li class="box">
-                    <a href="http://swipebox.csag.co/images/image-4.jpg" class="swipebox" title="Mustache Guy">
-                        <img src="http://swipebox.csag.co/images/image-4.jpg" alt="image">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section-->
     <section id="services" class="services" style="display: none;" >
         <div class="container" >
             <div class="row text-center"class="wrap" >
                 <div class="col-lg-12 col-md-6">
                     <h2><font style="text-transform: uppercase;"face="Helvetica" >Overview</font></h2>
                     <hr class="larger">
-                    <div class="row">
+                    
 
-                          <div class="button-group filters-button-group">
+                   <!--       <div class="button-group filters-button-group">
              
-  <button class="button is-checked" data-filter="*" style="background-color: #c0c0c0;">All</button>
+  <button class="button is-checked" data-filter="*" style="background: rgba(0,0,0,0.2); box-shadow:  0 0 0 #c0c0c0;">All</button>
   
- 
+  <button class="button" data-filter=".ling" style="background: rgba(0,0,0,0.2); box-shadow:  0 0 0 #c0c0c0; ">Lingerie</button>
+    
+  <button class="button" data-filter=".men" style="background: rgba(0,0,0,0.2); box-shadow:  0 0 0 #c0c0c0;"  >Men</button>
+      
+  <button class="button" data-filter=".women" style="background: rgba(0,0,0,0.2); box-shadow:  0 0 0 #c0c0c0;">Women</button>
 
 
-</div>
-
+</div> -->
+<!-- class="element-item men " -->
 <div class="grid">
-   <div class="element-item men ">
-  <a   href="img/1.jpg" class="swipebox" class="element-item men " data-category="men">
+   <div class="element-item women ">
+  <a   href="img/1.jpg" class="swipebox"  data-category="women">
   
-  <img class="img-services img-responsive" src="img/1.jpg" style="width: 300px; height: 300px;">
+  <img class="img-portfolio img-responsive" src="img/1.jpg"  alt="image" style="width: 300px; height: 300px;">
   
  </a>
    </div>
-  <div class="element-item ling ">
-   <a   href="img/2.jpg" class="swipebox" data-category="ling">
-   <img class="img-services img-responsive" src="img/2.jpg" style="width: 300px; height: 300px;">
+  <div class="element-item women ">
+   <a   href="img/2.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/2.jpg" style="width: 300px; height: 300px;">
   
  </a>
    </div>
 
-  <div class="element-item men " >
-<a href="img/3.jpg" class="swipebox"data-category="men">
-   <img class="img-services img-responsive" src="img/3.jpg" style="width: 300px; height: 300px;">
+  <div class="element-item women" >
+<a href="img/3.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/3.jpg" style="width: 300px; height: 300px;">
   
   </a>
     </div>
+   
    <div class="element-item women">
   <a  href="img/4.jpg" class="swipebox" data-category="women">
-   <img class="img-services img-responsive" src="img/4.jpg" style="width: 300px; height: 300px;">
+   <img class="img-portfolio img-responsive" src="img/4.jpg" style="width: 300px; height: 300px;">
   </a>
   </div>
-  <div class="element-item ling ">
-  <a  href="img/5.jpg" class="swipebox" data-category="ling">
-   <img class="img-services img-responsive" src="img/5.jpg" style="width: 300px; height: 300px;" >
+  <div class="element-item women">
+  <a  href="img/5.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/5.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+  <div class="element-item women">
+  <a  href="img/6.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/6.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+  <div class="element-item women ">
+  <a  href="img/7.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/7.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+  <div class="element-item women ">
+  <a  href="img/SailsChong.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/SailsChong.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+  <div class="element-item men">
+  <a  href="img/Logo2016.png" class="swipebox" data-category="men">
+   <img class="img-portfolio img-responsive" src="img/Logo2016.png" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item  women">
+  <a  href="img/8.jpg " class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/8.jpg " style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item ling">
+  <a  href="img/AdrianneHI.jpg " class="swipebox" data-category="ling">
+   <img class="img-portfolio img-responsive" src="img/AdrianneHI.jpg " style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item ">
+  <a  href="img/ " class="swipebox" data-category=" ">
+   <img class="img-portfolio img-responsive" src="img/ " style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item women">
+  <a  href="img/ChloeandOlga.jpg " class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/ChloeandOlga.jpg " style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item women">
+  <a  href="img/Geennel.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/Geennel.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item  women">
+  <a  href="img/Janina.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/Janina.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item ling">
+  <a  href="img/maddiewin.jpg" class="swipebox" data-category="ling">
+   <img class="img-portfolio img-responsive" src="img/maddiewin.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item ling">
+  <a  href="img/Madison.jpg" class="swipebox" data-category="ling">
+   <img class="img-portfolio img-responsive" src="img/Madison.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item ling">
+  <a  href="img/SimpleandClean.jpg" class="swipebox" data-category=" ling">
+   <img class="img-portfolio img-responsive" src="img/SimpleandClean.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item women">
+  <a  href="img/Ulyana.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/Ulyana.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item women ">
+  <a  href="img/Yana.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/Yana.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item women">
+  <a  href="img/Yellow.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/Yellow.jpg" style="width: 300px; height: 300px;" >
   
   </a>
   
@@ -692,40 +800,8 @@ $("#gallery-1").click( function( e ) {
 
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio" style="display: none;">
-      
-<div class="col-md-3">
-      <!-- <a id="menu-toggle2" href="#" style="background-color: transparent; opacity: 50%;" class="btn btn-dark btn-lg toggle2">
 
-    <i class="fa fa-bars"></i></a>
- -->
-
-       <!--   <nav class="col-xs-3 text-left" id="sidebar-wrapper2">
-              <ul class="sidebar-nav2 cat">
-                <a id="menu-close2" href="#" class="btn btn-light btn-lg pull-left toggle"><i class="fa fa-times"></i></a>
-
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
-
-
-                    <li > 
-                         <a href="#all"  id="navAll" data-filter="*" class="active"><font style="text-transform: uppercase;"face="helvetica" >All</font></a>
-                  </li>
-                     <li>
-                        <a href="#ling" id="navLing" data-filter=".ling"><font style="text-transform: uppercase;"face="helvetica" >Lingerie</font></a>
-                  </li>
-                    <li> 
-                         <a href="#men" id="navMen" data-filter=".men"><font style="text-transform: uppercase;"face="helvetica" >Men</font></a>
-                  </li>
-                    <li> 
-                         <a href="#women" id="navWomen" data-filter=".women"><font style="text-transform: uppercase;"face="helvetica" >Women</font></a>
-                  </li>
-                  </ul>
-            </nav> -->
-            </div>
+			
             <div class="row">
 
 
@@ -740,50 +816,210 @@ $("#gallery-1").click( function( e ) {
                     <hr class="large">
                     <div class="row">
 
+<!--       
+<div class="col-md-3" >
+      <a id="menu-toggle2" href="#" style="background-color: transparent; opacity: 50%;" class="btn btn-dark btn-lg toggle2">
 
-             <div class="button-group filters-button-group">
+    <i class="fa fa-bars"></i></a>
+
+
+        <nav class="col-xs-3 text-left" id="sidebar-wrapper2">
+              <ul class="sidebar-nav2 cat" class="button-group filters-button-group">
+                <a id="menu-close2" href="#" class="btn btn-light btn-lg pull-left toggle"><i class="fa fa-times"></i></a>
+
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+
+                    <li > 
+                         <button   data-filter="*" class="active"><font style="text-transform: uppercase;"face="helvetica" >All</font></button >
+                  </li>
+                     <li>
+                        <button    data-filter=".ling"><font style="text-transform: uppercase;"face="helvetica" >Lingerie</font></button >
+                  </li>
+                    <li> 
+                         <button    data-filter=".men"><font style="text-transform: uppercase;"face="helvetica" >Men</font></button >
+                  </li>
+                    <li> 
+                         <button   data-filter=".women"><font style="text-transform: uppercase;"face="bebas neue" >Women</font></button >
+                  </li>
+                  </ul>
+            </nav> 
+            </div> -->
+  <div class="button-group filters-button-group">
              
-  <button class="button is-checked" data-filter="*" style="background-color: #c0c0c0;">All</button>
+  <button class="button is-checked" data-filter="*" style="background: rgba(0,0,0,0.2); box-shadow:  0 0 0 #c0c0c0;">All</button>
   
-  <button class="button" data-filter=".ling" style="background-color: #c0c0c0; box-shadow: #c0c0c0; ">Lingerie</button>
+  <button class="button" data-filter=".ling" style="background: rgba(0,0,0,0.2); box-shadow:  0 0 0 #c0c0c0; ">Lingerie</button>
     
-  <button class="button" data-filter=".men" style="background-color: #c0c0c0;" >Men</button>
-    
+  <button class="button" data-filter=".men" style="background: rgba(0,0,0,0.2); box-shadow:  0 0 0 #c0c0c0;"  >Men</button>
   
-  <button class="button" data-filter=".women" style="background-color: #c0c0c0;">Women</button>
+  <button class="button" data-filter=".women" style="background: rgba(0,0,0,0.2); box-shadow:  0 0 0 #c0c0c0;">Women</button>
 
 
 </div>
-
+<!-- class="element-item men " -->
 <div class="grid">
-   <div class="element-item men ">
-  <a   href="img/1.jpg" class="swipebox" class="element-item men " data-category="men">
+   <div class="element-item women ">
+  <a   href="img/1.jpg" class="swipebox"  data-category="women">
   
-  <img class="img-portfolio img-responsive" src="img/1.jpg" style="width: 300px; height: 300px;">
+  <img class="img-portfolio img-responsive" src="img/1.jpg"  alt="image" style="width: 300px; height: 300px;">
   
  </a>
    </div>
-  <div class="element-item ling ">
-   <a   href="img/2.jpg" class="swipebox" data-category="ling">
+  <div class="element-item women ">
+   <a   href="img/2.jpg" class="swipebox" data-category="women">
    <img class="img-portfolio img-responsive" src="img/2.jpg" style="width: 300px; height: 300px;">
   
  </a>
    </div>
 
-  <div class="element-item men " >
-<a href="img/3.jpg" class="swipebox"data-category="men">
+  <div class="element-item women" >
+<a href="img/3.jpg" class="swipebox" data-category="women">
    <img class="img-portfolio img-responsive" src="img/3.jpg" style="width: 300px; height: 300px;">
   
   </a>
     </div>
+   
    <div class="element-item women">
   <a  href="img/4.jpg" class="swipebox" data-category="women">
    <img class="img-portfolio img-responsive" src="img/4.jpg" style="width: 300px; height: 300px;">
   </a>
   </div>
-  <div class="element-item ling ">
-  <a  href="img/5.jpg" class="swipebox" data-category="ling">
+  <div class="element-item women">
+  <a  href="img/5.jpg" class="swipebox" data-category="women">
    <img class="img-portfolio img-responsive" src="img/5.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+  <div class="element-item women">
+  <a  href="img/6.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/6.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+  <div class="element-item women ">
+  <a  href="img/7.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/7.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+  <div class="element-item women ">
+  <a  href="img/SailsChong.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/SailsChong.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+  <div class="element-item men">
+  <a  href="img/Logo2016.png" class="swipebox" data-category="men">
+   <img class="img-portfolio img-responsive" src="img/Logo2016.png" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item  women">
+  <a  href="img/8.jpg " class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/8.jpg " style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item ling">
+  <a  href="img/AdrianneHI.jpg " class="swipebox" data-category="ling">
+   <img class="img-portfolio img-responsive" src="img/AdrianneHI.jpg " style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item ">
+  <a  href="img/ " class="swipebox" data-category=" ">
+   <img class="img-portfolio img-responsive" src="img/ " style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item women">
+  <a  href="img/ChloeandOlga.jpg " class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/ChloeandOlga.jpg " style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item women">
+  <a  href="img/Geennel.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/Geennel.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item  women">
+  <a  href="img/Janina.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/Janina.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item ling">
+  <a  href="img/maddiewin.jpg" class="swipebox" data-category="ling">
+   <img class="img-portfolio img-responsive" src="img/maddiewin.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item ling">
+  <a  href="img/Madison.jpg" class="swipebox" data-category="ling">
+   <img class="img-portfolio img-responsive" src="img/Madison.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item ling">
+  <a  href="img/SimpleandClean.jpg" class="swipebox" data-category=" ling">
+   <img class="img-portfolio img-responsive" src="img/SimpleandClean.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item women">
+  <a  href="img/Ulyana.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/Ulyana.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item women ">
+  <a  href="img/Yana.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/Yana.jpg" style="width: 300px; height: 300px;" >
+  
+  </a>
+  
+  </div>
+  
+   <div class="element-item women">
+  <a  href="img/Yellow.jpg" class="swipebox" data-category="women">
+   <img class="img-portfolio img-responsive" src="img/Yellow.jpg" style="width: 300px; height: 300px;" >
   
   </a>
   
@@ -1193,6 +1429,9 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
     $("#menu-close").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
+		$("#menu-toggle").show("active");
+		$("#menu-close").hide("active"); 
+		
 
     });
 
@@ -1200,6 +1439,11 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
+		$("#menu-close").show("active"); 
+		$("#menu-toggle").hide("active"); 
+		
+		
+		
     });
 
 
@@ -1293,6 +1537,13 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
 <script type="text/javascript" src="js/main.js"></script>
  <script type="text/javascript" src="js/SmoothScroll.js"></script>
     <script type="text/javascript" src="js/jquery.isotope.js"></script>
+	
+	<script type="text/javascript">
+jQuery(function($) {
+	$(".swipebox").swipebox();
+});
+</script>
+	
 <script type="text/javascript">
     $( document ).ready(function() {
 
@@ -1313,7 +1564,7 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
 
       });
     </script>
-<script type="text/javascript" src="js/main.js"></script>
+<!-- <script type="text/javascript" src="js/main.js"></script> -->
 <script src="js/owl.carousel.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script src='http://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js'></script>
