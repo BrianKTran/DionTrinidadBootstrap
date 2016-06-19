@@ -39,10 +39,10 @@
     <link href="css/plugin.css" rel="stylesheet" type="text/css">
 
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<!-- 
+<script type="text/javascript" src="js/main.js"></script> -->
 
-<script type="text/javascript" src="js/main.js"></script>
-
-<script type="text/javascript"  src="http://cdn.renderedfont.com/js/renderedfont-0.8.min.js#free"></script>
+<!-- <script type="text/javascript"  src="http://cdn.renderedfont.com/js/renderedfont-0.8.min.js#free"></script> -->
 
     <link rel="stylesheet" href="swipebox/src/css/swipebox.css">
     <link rel="stylesheet" href="swipebox/src/css/swipebox.min.css">
@@ -51,14 +51,17 @@
     <link rel="stylesheet" href="swipebox/demo/style.css">
     <link rel="stylesheet" type="text/css"  href="css/style.css">
 
-   <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
-    <link href="css/owl.theme.css" rel="stylesheet" media="screen">
+  <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
+  <link href="css/owl.theme.css" rel="stylesheet" media="screen">
 	  
+
+
 <script type="{{site.baseurl}}/js/scrollspy.js"></script>
 <script src="swipebox/lib/jquery-1.9.0.js"></script>
 <!-- <script src="swipebox/src/js/jquery.swipebox.js"></script>
  --><!-- <script type="text/javascript" src="swipebox/src/js/jquery.swipebox.js"></script>
- --><script type="text/javascript" src="swipebox/src/js/jquery.swipebox.min.js"></script>
+ -->
+ <!-- <script type="text/javascript" src="js/jquery.swipebox.min.js"></script> -->
 
   <script type="text/javascript" src="js/modernizr.custom.js"></script>
 <script src="swipebox/lib/ios-orientationchange-fix.js"></script>
@@ -252,7 +255,7 @@
               });
 
 
-              $("#navContactForm").click(function (event) {
+              $("#navcntctFrm").click(function (event) {
 
                      $("#contact, #footer").fadeIn(500);
                   
@@ -1275,7 +1278,7 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
     </aside> -->
 
     <!-- Map -->
-    <section id="contact" id="contactForm" class="map" style="display: none;">
+    <section id="contact" id="cntctFrm" class="map" style="display: none;">
     <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -1287,12 +1290,12 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
             <div class="row">
                 <div class="col-lg-12">
 
-                  <form name="sentMessage" id="contactForm" novalidate>
+                  <form name="sentMessage" id="cntctFrm" novalidate>
                  
                         <div class="row">
 
 
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                                 
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
@@ -1302,7 +1305,7 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
 
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
 
                             <div class="form-group">
                                     <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
@@ -1313,7 +1316,7 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
                                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                                 </div-->
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                             
                                 <!--div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>
@@ -1333,16 +1336,14 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
                                     <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
+
                         <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                               
-                                <button type="submit" href="#navContactForm" id="navContactForm" class="btn tf-btn btn-default">Submit</button>
-                        
+                                <button type="submit" class="btn btn-xl">Send Message</button>
                             </div>
-                        
                     </form>
 
-                    <!--form name="sentMessage" id="contactForm" novalidate>
+                    <!--form name="sentMessage" id="cntctFrm" novalidate>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -1495,6 +1496,7 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
+    
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
@@ -1504,14 +1506,18 @@ His celebrity clients include actors Leonardo Dicaprio, Jessica Chastain, Bruce 
   <script src="lib/jquery-2.1.0.min.js"></script>
   <script src="js/jquery.swipebox.js"></script>
 
- <script type="text/javascript" src="js/SmoothScroll.js"></script>
-    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+<!--  <script type="text/javascript" src="js/SmoothScroll.js"></script>
+ -->    <script type="text/javascript" src="js/jquery.isotope.js"></script>
 	
-	<script type="text/javascript">
+  <script type="text/javascript">
 jQuery(function($) {
-	$(".swipebox").swipebox();
+  $(".swipebox").swipebox();
 });
 </script>
+
+
+
+
 	<!-- 
 <script type="text/javascript">
     $( document ).ready(function() {
@@ -1536,8 +1542,8 @@ jQuery(function($) {
      -->
 <!-- <script type="text/javascript" src="js/main.js"></script> -->
 <script src="js/owl.carousel.js"></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-<script src='http://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js'></script>
+<!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+ --><script src='http://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js'></script>
 
         <script src="js/index.js"></script>
 </body>
