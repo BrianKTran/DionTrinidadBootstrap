@@ -342,7 +342,7 @@ hr.small {
 }
 .portfolio-item .hover-bg{
     height: 260px;
-    overflow: hidden;
+   /* overflow: hidden;*/
     position: relative;
 }
 
