@@ -1,14 +1,19 @@
 * { box-sizing: border-box; 
+
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Bebas Neue;
+overflow: scroll;
+position: relative;
+
+  
 }
 
 /* ---- button ---- */
 
 .button {
-  display: inline-block;
+  display: block;
   padding: 10px 18px;
   margin-bottom: 10px;
   background: #EEE;
@@ -30,9 +35,8 @@ body {
 
 .button:active,
 .button.is-checked {
-  background-color: #c0c0c0;
+  /*background-color: #c0c0c0;*/
 }
-
 .button.is-checked {
   color: white;
   text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
