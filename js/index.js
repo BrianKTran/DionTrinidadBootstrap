@@ -3,8 +3,14 @@
 // init Isotope
 var $grid = $('.grid').isotope({
   itemSelector: '.element-item',
-  layoutMode: 'fitRows'
+  layoutMode: 'fitRows' 
+
 });
+
+
+
+
+
 // filter functions
 var filterFns = {
   // show if number is greater than 50
